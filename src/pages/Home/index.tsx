@@ -1,5 +1,12 @@
+import BodySection from '../../components/BodySection/BodySection';
+import Layout from '../../components/Layout/Layout';
+
 function HomePage() {
-    return <f-button label="label"></f-button>;
+    return (
+        <Layout>
+            <BodySection></BodySection>
+        </Layout>
+    );
 }
 
 export default HomePage;

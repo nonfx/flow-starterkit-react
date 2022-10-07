@@ -1,0 +1,15 @@
+.bottom-section {
+    margin: auto;
+    max-width: 1145px;
+}
+
+.bottom-section::-webkit-scrollbar {
+    display: none;
+}
+.bottom-section {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+.bottom-section a {
+    text-decoration: none;
+}
