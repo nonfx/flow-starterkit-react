@@ -1,0 +1,122 @@
+#main-navbar .not-responsive-icon-group {
+    width: inherit;
+}
+.red {
+    background-color: red !important;
+    width: 200px !important;
+    height: 200px !important;
+}
+@media (max-width: 768px) {
+    #main-navbar .responsive-icon-group {
+        width: inherit;
+    }
+    #main-navbar .not-responsive-icon-group {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    #main-navbar .responsive-icon-group {
+        display: none;
+    }
+    #main-navbar .not-responsive-icon-group {
+        width: inherit;
+    }
+}
+@media (max-width: 992px) {
+    #main-navbar .show-search-icon {
+        width: inherit;
+    }
+}
+@media (min-width: 992px) {
+    #main-navbar .show-search-icon {
+        display: none;
+    }
+}
+@media (min-width: 600px) {
+    #main-navbar .not-responsive-header {
+        width: inherit;
+    }
+    #main-navbar .responsive-header {
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    #main-navbar .not-responsive-header {
+        display: none;
+    }
+    #main-navbar .responsive-width-change {
+        flex: 1 1 !important;
+        max-width: 100% !important;
+    }
+    #main-navbar .responsive-header {
+        width: inherit;
+    }
+}
+
+.mobile-view-responsive {
+    width: inherit;
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-80%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slide-right {
+    from {
+        margin-left: -10%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+@media (max-width: 600px) {
+    .mobile-view-responsive {
+        width: 100% !important;
+    }
+}
+@media (min-width: 600px) {
+    .mobile-view-responsive {
+        width: 320px !important;
+        animation: 0.4s ease-out 0s 1 slide-right;
+    }
+}
+.hide-in-mobile-view {
+    width: inherit;
+}
+@keyframes slide-left {
+    from {
+        margin-left: 7%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(-80%);
+    }
+}
+@media (max-width: 600px) {
+    .hide-in-mobile-view {
+        display: none !important;
+    }
+}
+@media (min-width: 600px) {
+    .hide-in-mobile-view {
+        width: inherit;
+        animation: 0.4s ease-out 0s 1 slide-left;
+    }
+}
+.remove-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.remove-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
