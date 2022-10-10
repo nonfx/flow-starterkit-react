@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@cldcvr/flow-core": "^0.4.2",
+        "@cldcvr/flow-core": "^0.4.6",
         "@cldcvr/flow-system-icon": "^0.1.3",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
