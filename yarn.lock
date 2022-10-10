@@ -1090,10 +1090,10 @@
     axios "^0.27.2"
     lit "^2.2.4"
 
-"@cldcvr/flow-core@^0.4.2":
-  version "0.4.2"
-  resolved "https://pkgs.dev.azure.com/cldcvrdevusa/_packaging/FlowLibraryFeed/npm/registry/@cldcvr/flow-core/-/flow-core-0.4.2.tgz#100a3d1003c6abcef7b96201a0a0b0a91837749d"
-  integrity sha1-EAo9EAPGq873uWIBoKCwqRg3dJ0=
+"@cldcvr/flow-core@^0.4.6":
+  version "0.4.6"
+  resolved "https://pkgs.dev.azure.com/cldcvrdevusa/_packaging/FlowLibraryFeed/npm/registry/@cldcvr/flow-core/-/flow-core-0.4.6.tgz#2ae64d08c1011ee6b8abc24b310f44269f0d063c"
+  integrity sha1-KuZNCMEBHua4q8JLMQ9EJp8NBjw=
   dependencies:
     "@floating-ui/dom" "^1.0.2"
     axios "^0.27.2"
