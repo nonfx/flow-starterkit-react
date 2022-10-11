@@ -1,19 +1,66 @@
 # Contributing
 
-When contributing to this repository, please first discuss the change you wish to make via issue,
-email, or any other method with the owners of this repository before making a change. 
+Thank you for your interest in contributing! 🎉👍
+
+Flow is a framework that is made up of multiple dependencies / templates. Visit the [about.md](https://github.com/cldcvr/flow-core/blob/main/ABOUT.md) on the [flow-core repo](https://github.com/cldcvr/flow-core/) to learn more.
+
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the [owners](https://github.com/cldcvr/flow-core/blob/main/CODEOWNERS) of this repository before making a change. You can expect a response from a maintainer within a week. If you haven’t heard anything by then, feel free to ping on the slack channel or write to flow@cldcvr.com.
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
+## Collaborate
+
+The Flow core team will review all contributions. The approved files will be available in their repository for other users to free use. The Flow core team and CloudCover are not responsible for maintaining third-party libraries and reserve the right to remove them from the repository in case the author does not respond to possible bugs or feature requests in it.
+
+The contributed files should be licensed with a recognized OpenSource license.
+
+You can collaborate by
+
+-   Reporting issues
+-   Fixing issues and bug
+-   Updating the starter kit
+
+### Reporting issues
+
+Bugs are tracked as GitHub issues. After you've determined which repository your bug is related to, create an issue on that repository and provide the following information by filling in the template.
+
+-   Use a clear and descriptive title for the issue to identify the problem.
+-   Mention which version of the repo
+-   Describe the exact steps which reproduce the problem in as many details as possible.
+-   Explain which behavior you expected to see instead and why.
+-   Include screenshots, animated GIFs or videos that clearly demonstrate the problem.
+
+### Fixing issues
+
+All issues as tracked here. Once you have resolved an issue,
+
+-   Verify that [core values](https://github.com/cldcvr/flow-core/blob/main/ABOUT.md) have been followed.
+-   Flow color tokens have been consumed and no custom tokens have been created.
+-   Create a pull request in this repository by uploading your dependency package.
+-   In the PR description link to the respective figma page/file
+-   Include screenshots, animated GIFs or videos of the feature, you can also send it to flow@cldcvr.com with a reference to the PR.
+
+### Updating the starter kit
+
+Starter kits are aimed at being light, always offering just enough to get started. Flow templates should be used to populate the scaffolding in the kit.
+
+We have put a few items on our roadmap, if you would like to contribute, write into flow@cldcvr.com
+
+### Roadmap
+
+-   Better documentation
+-   Smoother developer onboarding
+-   Visual test cases
+
 ## Pull Request Process
 
-1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
+1. Ensure any install or build dependencies are removed before the end of the layer when doing a
    build.
-2. Update the README.md with details of changes to the interface, this includes new environment 
+2. Update the README.md with details of changes to the interface, this includes new environment
    variables, exposed ports, useful file locations and container parameters.
 3. Increase the version numbers in any examples files and the README.md to the new version that this
    Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
+4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you
    do not have permission to do that, you may request the second reviewer to merge it for you.
 
 ## Code of Conduct
@@ -32,34 +79,30 @@ orientation.
 Examples of behavior that contributes to creating a positive environment
 include:
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+-   Using welcoming and inclusive language
+-   Being respectful of differing viewpoints and experiences
+-   Gracefully accepting constructive criticism
+-   Focusing on what is best for the community
+-   Showing empathy towards other community members
 
 Examples of unacceptable behavior by participants include:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
-advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+-   The use of sexualized language or imagery and unwelcome sexual attention or
+    advances
+-   Trolling, insulting/derogatory comments, and personal or political attacks
+-   Public or private harassment
+-   Publishing others' private information, such as a physical or electronic
+    address, without explicit permission
+-   Other conduct which could reasonably be considered inappropriate in a
+    professional setting
 
-### Our Responsibilities
+### Flow core team responsibilities
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+Core team members are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+Core team members have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, or to ban temporarily or permanently any contributor for other behaviors that they deem inappropriate, threatening, offensive, or harmful.
+
+This documented was inspired by the contributing guidelines for penpot, atom, github
 
 ### Scope
 
