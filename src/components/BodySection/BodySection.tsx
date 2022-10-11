@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './body-section.css';
 
 const BodySection = () => {
+    // dummy data
     const data = [
         {
             icon: 'i-org',
@@ -44,8 +45,17 @@ const BodySection = () => {
     ];
     return (
         <>
-            <f-div direction="column" padding="none" overflow="wrap">
-                <f-div state="subtle" align="middle-center" direction="column" gap="large" overflow="wrap">
+            {/* control panel start */}
+            <f-div direction="column" padding="none" overflow="wrap" id="control-panel">
+                {/* welcome message section start */}
+                <f-div
+                    state="subtle"
+                    align="middle-center"
+                    direction="column"
+                    gap="large"
+                    overflow="wrap"
+                    id="welcome-message"
+                >
                     <f-div padding="none" align="middle-center" height="hug-content">
                         <f-pictogram source="💬" variant="square" size="x-large" state="default"></f-pictogram>
                     </f-div>
@@ -61,7 +71,16 @@ const BodySection = () => {
                         </f-div>
                     </f-div>
                 </f-div>
-                <f-div padding="x-large" gap="x-large" align="middle-left" overflow="wrap" class="bottom-section">
+                {/* welcome message section end */}
+                {/* info section start */}
+                <f-div
+                    padding="x-large"
+                    gap="x-large"
+                    align="middle-left"
+                    overflow="wrap"
+                    class="bottom-section"
+                    id="info-section"
+                >
                     {data.map((item) => (
                         <f-div padding="none" gap="medium" width="hug-content" height="hug-content" key={item.icon}>
                             <f-icon source={item.icon} size="medium" state="default"></f-icon>
@@ -104,7 +123,9 @@ const BodySection = () => {
                         </f-div>
                     ))}
                 </f-div>
+                {/* infos section end */}
             </f-div>
+            {/* control panel end */}
         </>
     );
 };

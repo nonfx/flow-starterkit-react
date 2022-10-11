@@ -6,14 +6,19 @@ type Props = {
     children: JSX.Element;
 };
 const Layout = ({ children }: Props) => {
+    //open/close sidebar variable
     const [openSidebar, setOpenSidebar] = useState(false);
+    //function to toggle sidebar open/close
     const toggleSidebar = () => {
         setOpenSidebar(!openSidebar);
     };
     return (
         <>
-            <f-div direction="column" padding="none" height="100%" state="default">
+            {/* starterkit-react */}
+            <f-div direction="column" padding="none" height="100%" state="default" id="starterkit-react">
+                {/* top-nav hidden when screen size is less than 600px */}
                 {openSidebar && window.matchMedia('(max-width: 600px)').matches ? null : (
+                    // top-nav section start
                     <f-div
                         align="middle-left"
                         gap="small"
@@ -21,10 +26,11 @@ const Layout = ({ children }: Props) => {
                         padding="medium"
                         variant="block"
                         state="default"
-                        id="main-navbar"
+                        id="top-nav"
                         height="hug-content"
                     >
-                        <f-div align="middle-left" gap="small" width="hug-content">
+                        {/* section-left start */}
+                        <f-div align="middle-left" gap="small" width="hug-content" id="secion-left">
                             <f-icon
                                 source="i-hamburger"
                                 size="large"
@@ -37,13 +43,32 @@ const Layout = ({ children }: Props) => {
                                 size="large"
                             ></f-icon>
                         </f-div>
-                        <f-div align="middle-left" gap="small" width="fill-container" class="not-responsive-header">
+                        {/* section-left end */}
+                        {/* section-middle start */}
+                        <f-div
+                            align="middle-left"
+                            gap="small"
+                            width="fill-container"
+                            class="not-responsive-header"
+                            id="section-middle"
+                        >
+                            {/* left-swappable items section start */}
                             <f-icon source="i-arrow-left" size="small" clickable={true}></f-icon>
                             <f-text variant="heading" size="x-small" weight="regular">
                                 Home / Foundation{' '}
                             </f-text>
+                            {/* left-swappable items section end */}
                         </f-div>
-                        <f-div align="middle-right" gap="medium" width="hug-content" class="responsive-width-change">
+                        {/* section-middle end */}
+                        {/* section-right start */}
+                        <f-div
+                            align="middle-right"
+                            gap="medium"
+                            width="hug-content"
+                            class="responsive-width-change"
+                            id="section-right"
+                        >
+                            {/* right swappable items section start */}
                             <f-icon-button
                                 icon="i-search"
                                 size="small"
@@ -71,12 +96,15 @@ const Layout = ({ children }: Props) => {
                                 state="neutral"
                             ></f-icon-button>
                             <MenuPopover />
+                            {/* right swappable items section end */}
                         </f-div>
+                        {/* section-right end */}
                     </f-div>
+                    // top-nav section end
                 )}
-
-                <f-div padding="none">
-                    {/* <!-- template snippet to be copied - start--> */}
+                {/* body section start */}
+                <f-div padding="none" id="body">
+                    {/* <!-- side-nav start--> */}
                     <f-div
                         align="top-center"
                         border="small solid default right"
@@ -87,7 +115,9 @@ const Layout = ({ children }: Props) => {
                         class={openSidebar ? 'mobile-view-responsive' : 'hide-in-mobile-view'}
                         state="default"
                         overflow="hidden"
+                        id="side-nav"
                     >
+                        {/* section-top start */}
                         <f-div
                             padding="small"
                             gap="small"
@@ -96,6 +126,7 @@ const Layout = ({ children }: Props) => {
                             direction={openSidebar ? 'row' : 'column'}
                             state="default"
                             overflow="hidden"
+                            id="section-top"
                         >
                             <f-icon
                                 source={openSidebar ? 'i-hamburger-close' : 'i-hamburger'}
@@ -111,12 +142,15 @@ const Layout = ({ children }: Props) => {
                                 state="primary"
                             ></f-icon-button>
                         </f-div>
+                        {/* section-top end */}
+                        {/* section-middle start */}
                         <f-div
                             padding="none"
                             direction="column"
                             align="top-left"
                             overflow="scroll"
                             class="remove-scrollbar"
+                            id="section-middle"
                         >
                             {[0].map((item) => {
                                 return (
@@ -145,6 +179,8 @@ const Layout = ({ children }: Props) => {
                                 );
                             })}
                         </f-div>
+                        {/* section-middle end */}
+                        {/* section-bottom start */}
                         <f-div
                             padding={openSidebar ? 'none' : 'small'}
                             direction="column"
@@ -152,6 +188,7 @@ const Layout = ({ children }: Props) => {
                             height="hug-content"
                             border="small solid default top"
                             state="default"
+                            id="section-bottom"
                         >
                             {[0].map((item) => {
                                 return (
@@ -178,11 +215,15 @@ const Layout = ({ children }: Props) => {
                                 );
                             })}
                         </f-div>
+                        {/* section-bottom end */}
                     </f-div>
-                    {/* <!--template snippet to be copied - end --> */}
+                    {/* side-nav end --> */}
+                    {/* main body content in children */}
                     {children}
                 </f-div>
+                {/* body section end */}
             </f-div>
+            {/* starterkit-react */}
         </>
     );
 };
