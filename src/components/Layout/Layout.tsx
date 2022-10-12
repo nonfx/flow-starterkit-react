@@ -1,7 +1,6 @@
 import './layout.css';
 import MenuPopover from '../Popover/MenuPopover/MenuPopover';
 import { useState } from 'react';
-import { ConfigUtil } from '@cldcvr/flow-core';
 
 type Props = {
     children: JSX.Element;
@@ -23,7 +22,6 @@ const Layout = ({ children }: Props) => {
 
     const changeTheme = (updatedtheme: 'f-dark' | 'f-light') => {
         setTheme(updatedtheme);
-        ConfigUtil.setConfig({ theme: updatedtheme });
     };
 
     return (
