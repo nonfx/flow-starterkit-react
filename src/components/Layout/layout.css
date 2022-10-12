@@ -1,50 +1,50 @@
-#top-nav .not-responsive-icon-group {
+.top-nav .not-responsive-icon-group {
     width: inherit;
 }
 
 @media (max-width: 768px) {
-    #top-nav .responsive-icon-group {
+    .top-nav .responsive-icon-group {
         width: inherit;
     }
-    #top-nav .not-responsive-icon-group {
+    .top-nav .not-responsive-icon-group {
         display: none;
     }
 }
 @media (min-width: 768px) {
-    #top-nav .responsive-icon-group {
+    .top-nav .responsive-icon-group {
         display: none;
     }
-    #top-nav .not-responsive-icon-group {
+    .top-nav .not-responsive-icon-group {
         width: inherit;
     }
 }
 @media (max-width: 992px) {
-    #top-nav .show-search-icon {
+    .top-nav .show-search-icon {
         width: inherit;
     }
 }
 @media (min-width: 992px) {
-    #top-nav .show-search-icon {
+    .top-nav .show-search-icon {
         display: none;
     }
 }
 @media (min-width: 600px) {
-    #top-nav .not-responsive-header {
+    .top-nav .not-responsive-header {
         width: inherit;
     }
-    #top-nav .responsive-header {
+    .top-nav .responsive-header {
         display: none;
     }
 }
 @media (max-width: 600px) {
-    #top-nav .not-responsive-header {
+    .top-nav .not-responsive-header {
         display: none;
     }
-    #top-nav .responsive-width-change {
+    .top-nav .responsive-width-change {
         flex: 1 1 !important;
         max-width: 100% !important;
     }
-    #top-nav .responsive-header {
+    .top-nav .responsive-header {
         width: inherit;
     }
 }

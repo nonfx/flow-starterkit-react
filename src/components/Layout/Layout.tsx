@@ -1,6 +1,7 @@
 import './layout.css';
 import MenuPopover from '../Popover/MenuPopover/MenuPopover';
 import { useState } from 'react';
+import { ConfigUtil } from '@cldcvr/flow-core';
 
 type Props = {
     children: JSX.Element;
@@ -8,104 +9,153 @@ type Props = {
 const Layout = ({ children }: Props) => {
     //open/close sidebar variable
     const [openSidebar, setOpenSidebar] = useState(false);
+    //open/close avatar variable
+    const [openAvatar, setOpenAvatar] = useState(false);
+    const [theme, setTheme] = useState('f-light');
     //function to toggle sidebar open/close
     const toggleSidebar = () => {
         setOpenSidebar(!openSidebar);
     };
+    //Toggle Avatar Popup
+    const toggleAvatarPopup = () => {
+        setOpenAvatar(!openAvatar);
+    };
+
+    const changeTheme = (updatedtheme: 'f-dark' | 'f-light') => {
+        setTheme(updatedtheme);
+        ConfigUtil.setConfig({ theme: updatedtheme });
+    };
+
     return (
         <>
             {/* starterkit-react */}
-            <f-div direction="column" padding="none" height="100%" state="default" id="starterkit-react">
+            <f-div data-f-id="starterkit-react" direction="column" padding="none" height="100%" state="default">
                 {/* top-nav hidden when screen size is less than 600px */}
                 {openSidebar && window.matchMedia('(max-width: 600px)').matches ? null : (
-                    // top-nav section start
+                    // top-nav start
                     <f-div
-                        align="middle-left"
-                        gap="small"
-                        border="small solid default bottom"
+                        data-f-id="top-nav"
                         padding="medium"
-                        variant="block"
-                        state="default"
-                        id="top-nav"
+                        gap="small"
+                        state="secondary"
+                        align="middle-left"
                         height="hug-content"
+                        border="small solid default bottom"
+                        class="top-nav"
                     >
-                        {/* section-left start */}
-                        <f-div align="middle-left" gap="small" width="hug-content" id="secion-left">
-                            <f-icon
-                                source="i-hamburger"
+                        {/* This data-f-id=\"top-nav-left\" is swappable, Find examples in https://flow.cldcvr.com/templates/index.html?path=/docs/top-nav--top-nav-left-logo */}
+                        <f-div data-f-id="top-nav-left" width="hug-content" align="middle-center" gap="small">
+                            <f-icon-button
+                                icon="i-hamburger"
+                                variant="round"
                                 size="large"
+                                state="neutral"
+                                type="packed"
                                 class="responsive-header"
                                 onClick={toggleSidebar}
-                                clickable={true}
-                            ></f-icon>
-                            <f-icon
-                                source="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/7c68ee60c1588f7dfdf55a5b1f471efe.png"
-                                size="large"
-                            ></f-icon>
-                        </f-div>
-                        {/* section-left end */}
-                        {/* section-middle start */}
-                        <f-div
-                            align="middle-left"
-                            gap="small"
-                            width="fill-container"
-                            class="not-responsive-header"
-                            id="section-middle"
-                        >
-                            {/* left-swappable items section start */}
-                            <f-icon source="i-arrow-left" size="small" clickable={true}></f-icon>
-                            <f-text variant="heading" size="x-small" weight="regular">
-                                Home / Foundation{' '}
-                            </f-text>
-                            {/* left-swappable items section end */}
-                        </f-div>
-                        {/* section-middle end */}
-                        {/* section-right start */}
-                        <f-div
-                            align="middle-right"
-                            gap="medium"
-                            width="hug-content"
-                            class="responsive-width-change"
-                            id="section-right"
-                        >
-                            {/* right swappable items section start */}
-                            <f-icon-button
-                                icon="i-search"
-                                size="small"
-                                variant="round"
-                                type="fill"
-                                state="neutral"
-                                class="show-search-icon"
                             ></f-icon-button>
-                            <f-div
-                                padding="none"
-                                gap="small"
-                                class="not-responsive-icon-group"
-                                align="middle-right"
-                                width="hug-content"
-                            >
-                                <f-icon source="i-git" size="medium" state="secondary" clickable={true}></f-icon>
-                                <f-icon source="i-file" size="medium" state="secondary" clickable={true}></f-icon>
-                                <f-icon source="i-alarm" size="medium" state="secondary" clickable={true}></f-icon>
+                            <f-icon source="p-cloudcover-dark" size="large"></f-icon>
+                        </f-div>
+                        {/* This data-f-id=\"top-nav-middle\" is swappable, Find examples in https://flow.cldcvr.com/templates/index.html?path=/docs/top-nav--top-nav-middle-breadcrumb */}
+                        <f-div data-f-id="top-nav-middle" gap="small" align="middle-left" class="not-responsive-header">
+                            <f-icon source="i-arrow-left"></f-icon>
+                            <f-text size="small">Home / Project / Environment / Application / Logs</f-text>
+                        </f-div>
+                        {/* This data-f-id=\"top-nav-right\" is swappable, Find examples in https://flow.cldcvr.com/templates/index.html?path=/docs/top-nav--top-nav-right-search */}
+                        <f-div
+                            data-f-id="top-nav-right"
+                            align="middle-right"
+                            gap="large"
+                            class="responsive-width-change"
+                            width="hug-content"
+                        >
+                            <f-icon-button icon="i-search" size="small" state="neutral"></f-icon-button>
+                            <f-div gap="small" width="hug-content" class="not-responsive-icon-group">
+                                <f-icon-button
+                                    icon="i-git"
+                                    variant="round"
+                                    size="large"
+                                    state="neutral"
+                                    type="packed"
+                                ></f-icon-button>
+                                <f-icon-button
+                                    icon="i-file"
+                                    variant="round"
+                                    size="large"
+                                    state="neutral"
+                                    type="packed"
+                                ></f-icon-button>
+                                <f-icon-button
+                                    icon="i-alarm"
+                                    variant="round"
+                                    size="large"
+                                    state="neutral"
+                                    type="packed"
+                                ></f-icon-button>
                             </f-div>
+                            <f-popover
+                                size="small"
+                                overlay-click={toggleAvatarPopup}
+                                open={openAvatar ? true : undefined}
+                                target="#profilePopover"
+                            >
+                                <f-div direction="column" state="secondary">
+                                    <f-div padding="medium" gap="small" border="small solid default bottom">
+                                        <f-pictogram source="i-user" variant="circle"></f-pictogram>
+                                        <f-div direction="column">
+                                            <f-text size="x-small" state="secondary">
+                                                Logged in as
+                                            </f-text>
+                                            <f-text>no@email.com</f-text>
+                                        </f-div>
+                                        <f-div align="top-right">
+                                            <f-icon source="i-edit" state="secondary"></f-icon>
+                                        </f-div>
+                                    </f-div>
+                                    <f-div
+                                        padding="medium"
+                                        gap="small"
+                                        clickable
+                                        state="default"
+                                        selected={theme === 'f-dark' ? 'background' : 'none'}
+                                        onClick={() => changeTheme('f-dark')}
+                                    >
+                                        <f-text>Dark theme</f-text>
+                                        {theme === 'f-dark' ? <f-icon source="i-tick" state="success"></f-icon> : null}
+                                    </f-div>
+                                    <f-div
+                                        padding="medium"
+                                        gap="small"
+                                        border="small solid default bottom"
+                                        clickable
+                                        selected={theme === 'f-dark' ? 'background' : 'none'}
+                                        onClick={() => changeTheme('f-light')}
+                                    >
+                                        <f-text>Light theme</f-text>
+                                        {theme === 'f-light' ? <f-icon source="i-tick" state="success"></f-icon> : null}
+                                    </f-div>
+                                    <f-div padding="medium" gap="small" clickable>
+                                        <f-text>Logout</f-text>
+                                    </f-div>
+                                </f-div>
+                            </f-popover>
                             <f-icon-button
                                 icon="i-user"
                                 size="small"
-                                variant="round"
-                                type="fill"
                                 state="neutral"
+                                id="profilePopover"
+                                onClick={toggleAvatarPopup}
                             ></f-icon-button>
-                            <MenuPopover />
-                            {/* right swappable items section end */}
+                            <MenuPopover></MenuPopover>
                         </f-div>
-                        {/* section-right end */}
                     </f-div>
-                    // top-nav section end
+                    // top-nav end
                 )}
                 {/* body section start */}
-                <f-div padding="none" id="body">
+                <f-div data-f-id="body" padding="none">
                     {/* <!-- side-nav start--> */}
                     <f-div
+                        data-f-id="side-nav"
                         align="top-center"
                         border="small solid default right"
                         variant="block"
@@ -115,10 +165,10 @@ const Layout = ({ children }: Props) => {
                         class={openSidebar ? 'mobile-view-responsive' : 'hide-in-mobile-view'}
                         state="default"
                         overflow="hidden"
-                        id="side-nav"
                     >
                         {/* section-top start */}
                         <f-div
+                            data-f-id="side-nav-top"
                             padding="small"
                             gap="small"
                             align={openSidebar ? 'middle-left' : 'middle-center'}
@@ -126,7 +176,6 @@ const Layout = ({ children }: Props) => {
                             direction={openSidebar ? 'row' : 'column'}
                             state="default"
                             overflow="hidden"
-                            id="section-top"
                         >
                             <f-icon
                                 source={openSidebar ? 'i-hamburger-close' : 'i-hamburger'}
@@ -145,12 +194,12 @@ const Layout = ({ children }: Props) => {
                         {/* section-top end */}
                         {/* section-middle start */}
                         <f-div
+                            data-f-id="side-nav-middle"
                             padding="none"
                             direction="column"
                             align="top-left"
                             overflow="scroll"
                             class="remove-scrollbar"
-                            id="section-middle"
                         >
                             {[0].map((item) => {
                                 return (
@@ -182,13 +231,13 @@ const Layout = ({ children }: Props) => {
                         {/* section-middle end */}
                         {/* section-bottom start */}
                         <f-div
+                            data-f-id="side-nav-bottom"
                             padding={openSidebar ? 'none' : 'small'}
                             direction="column"
                             align={openSidebar ? 'bottom-left' : 'top-center'}
                             height="hug-content"
                             border="small solid default top"
                             state="default"
-                            id="section-bottom"
                         >
                             {[0].map((item) => {
                                 return (

@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import '../../Layout/layout.css';
 
 const MenuPopover = () => {
     const recursiveArray = [0, 1, 2];
     const [openMenuPopover, setOpenMenuPopover] = useState(false);
     const togglePopover = () => {
-        console.log(!openMenuPopover);
         setOpenMenuPopover(!openMenuPopover);
     };
     return (
-        <f-div class="responsive-icon-group" width="hug-content" align="middle-center">
+        <>
             <f-popover
-                open={openMenuPopover}
+                open={openMenuPopover ? openMenuPopover : undefined}
                 overlay={true}
                 size={window.matchMedia('(max-width: 600px)').matches ? 'stretch' : 'small'}
                 target="#popoverTarget"
+                overlay-click={togglePopover}
             >
                 <f-div direction="column">
                     {recursiveArray.map((item, index) => {
@@ -53,8 +53,9 @@ const MenuPopover = () => {
                 id="popoverTarget"
                 onClick={togglePopover}
                 clickable={true}
+                class="responsive-icon-group"
             ></f-icon>
-        </f-div>
+        </>
     );
 };
 

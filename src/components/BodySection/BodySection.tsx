@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './body-section.css';
 
 const BodySection = () => {
@@ -46,15 +45,15 @@ const BodySection = () => {
     return (
         <>
             {/* control panel start */}
-            <f-div direction="column" padding="none" overflow="wrap" id="control-panel">
+            <f-div data-f-id="control-panel" direction="column" padding="none" overflow="wrap">
                 {/* welcome message section start */}
                 <f-div
+                    data-f-id="welcome-message"
                     state="subtle"
                     align="middle-center"
                     direction="column"
                     gap="large"
                     overflow="wrap"
-                    id="welcome-message"
                 >
                     <f-div padding="none" align="middle-center" height="hug-content">
                         <f-pictogram source="💬" variant="square" size="x-large" state="default"></f-pictogram>
@@ -74,12 +73,12 @@ const BodySection = () => {
                 {/* welcome message section end */}
                 {/* info section start */}
                 <f-div
+                    data-f-id="info-section"
                     padding="x-large"
                     gap="x-large"
                     align="middle-left"
                     overflow="wrap"
                     class="bottom-section"
-                    id="info-section"
                 >
                     {data.map((item) => (
                         <f-div padding="none" gap="medium" width="hug-content" height="hug-content" key={item.icon}>
