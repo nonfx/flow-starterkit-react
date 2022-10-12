@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import '@cldcvr/flow-core';
 import '@cldcvr/flow-core/dist/style.css';
+import '@cldcvr/flow-core';
 import '@cldcvr/flow-system-icon';
+import '@cldcvr/flow-product-icon';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
