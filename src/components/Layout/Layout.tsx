@@ -48,7 +48,7 @@ const Layout = ({ children }: Props) => {
                                 variant="round"
                                 size="large"
                                 state="neutral"
-                                type="packed"
+                                category="packed"
                                 class="responsive-header"
                                 onClick={toggleSidebar}
                             ></f-icon-button>
@@ -74,21 +74,21 @@ const Layout = ({ children }: Props) => {
                                     variant="round"
                                     size="large"
                                     state="neutral"
-                                    type="packed"
+                                    category="packed"
                                 ></f-icon-button>
                                 <f-icon-button
                                     icon="i-file"
                                     variant="round"
                                     size="large"
                                     state="neutral"
-                                    type="packed"
+                                    category="packed"
                                 ></f-icon-button>
                                 <f-icon-button
                                     icon="i-alarm"
                                     variant="round"
                                     size="large"
                                     state="neutral"
-                                    type="packed"
+                                    category="packed"
                                 ></f-icon-button>
                             </f-div>
                             <f-popover
@@ -185,7 +185,7 @@ const Layout = ({ children }: Props) => {
                                 icon="i-icon"
                                 size="large"
                                 variant="round"
-                                type="transparent"
+                                category="transparent"
                                 state="primary"
                             ></f-icon-button>
                         </f-div>
